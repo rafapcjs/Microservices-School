@@ -20,11 +20,22 @@ public class StudentController {
 
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
-public  void saveStudent(@RequestBody Student student){
+    public void saveStudent(@RequestBody Student student) {
         studentService.save(student);
-}
+    }
 
-@GetMapping
-public ResponseEntity<?>findById(@PathVariable Long id){
+    @GetMapping("/all")
+public ResponseEntity<?> findAll() {
+        return ResponseEntity.ok(studentService.findAll()); }
+
+
+    @GetMapping
+    public ResponseEntity<?> findById(@PathVariable Long id) {
         return ResponseEntity.ok(studentService.findById(id));
     }
+
+    @GetMapping("/search-ny-course/{idCourse}")
+    public ResponseEntity<?> findByIdCourse(@PathVariable Long idCourse) {
+        return ResponseEntity.ok(studentService.findByIdCourse(idCourse));
+    }
+}
