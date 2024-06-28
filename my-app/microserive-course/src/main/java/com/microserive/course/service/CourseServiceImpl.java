@@ -5,9 +5,10 @@ import com.microserive.course.dto.StudentDto;
 import com.microserive.course.entities.Course;
 import com.microserive.course.http.response.StudentByCourseResponse;
 import com.microserive.course.persintecie.ICourseRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
-
+@Service
 public class CourseServiceImpl implements iCourseService{
 
 private  final ICourseRepository iCourseRepository;

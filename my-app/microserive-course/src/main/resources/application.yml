@@ -6,12 +6,12 @@ spring:
     name: msvc-course
   datasource:
     driver-class-name: org.postgresql.Driver
-    url: jdbc:postgresql://localhost:5432/coursesdb
-    username: root
-    password: root
+    url: jdbc:postgresql://ep-spring-darkness-a4xsjkim.us-east-1.aws.neon.tech/msc_db?sslmode=require
+    username: msc_db_owner
+    password: dDtKy0hUQ7pl
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     database: postgresql
     database-platform: org.hibernate.dialect.PostgreSQLDialect
   config:
